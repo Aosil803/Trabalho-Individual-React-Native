@@ -1,25 +1,21 @@
-import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import Incon from "react-native-vector-icons/MaterialCommunityIcons";
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import BotaoAtualizar from './components/botaoAtualizar';
+import BotaoScaner from "./components/botaoScaner";
+
 
 const CloneAvg = () => {
   return (
     <View style={styles.container}>
       <View style={styles.statusbar}>
         <Text style={styles.texto1}>AVG AntiVirus</Text>
-        <TouchableOpacity style={styles.button01}>
-          <Text style={styles.buttonText}>ATUALIZAR</Text>
-        </TouchableOpacity>
+          <BotaoAtualizar/>
       </View>
       <View style={styles.scanner}>
-        <View style={styles.circulo01}>
-          <TouchableOpacity style={styles.circulo02}>
-            <Text style={styles.buttonText2}>RESOLVER PROBLEMAS</Text>
-          </TouchableOpacity>
-        </View>
+         <BotaoScaner/>
         <Text style={styles.text3}>Há problemas não resolvidos</Text>
         <Text style={styles.text4}>Última verificação: 5 dias atrás</Text>
       </View>
@@ -90,49 +86,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
-  button01: {
-    width: 130,
-    height: 30,
-    backgroundColor: '#feaa23',
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderRadius: 20,
-  },
-  buttonText: {
-    color: 'black',
-    fontSize: 14,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
+  
   scanner: {
     flex: 7,
     alignItems: "center",
     justifyContent: "center",
   },
-  circulo01: {
-    width: 170,
-    height: 170,
-    padding: 10,
-    borderWidth: 4,
-    borderRadius: 100,
-    justifyContent: "center",
-    alignItems: "center",
-    borderColor: "#453546",
-  },
-  circulo02: {
-    width: 140,
-    height: 140,
-    backgroundColor: '#ee4566',
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 80,
-  },
-  buttonText2: {
-    color: 'black',
-    fontSize: 14,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
+   
   text3: {
     color: "#ee4566",
     fontSize: 14,
@@ -197,7 +157,7 @@ const styles = StyleSheet.create({
   footerItem: {
     alignItems: "center",
   },
-  icon: {
+    icon: {
     color: "#fcffff",
   },
   footerText: {
