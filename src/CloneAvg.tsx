@@ -2,9 +2,9 @@ import { StyleSheet, View, Text } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import Incon from "react-native-vector-icons/MaterialCommunityIcons";
 import { MaterialIcons } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
 import BotaoAtualizar from './components/botaoAtualizar';
 import BotaoScaner from "./components/botaoScaner";
+import FooterItem from "./components/footerItem";
 
 
 const CloneAvg = () => {
@@ -48,26 +48,16 @@ const CloneAvg = () => {
       </View>
       <View style={styles.footer}>
         <View style={styles.footerItem}>
-          <Icon style={[styles.icon, { color: '#4bc386' }]} name="home" size={26} />
-          <Text style={[styles.footerText, { color: '#46c386' }]}>Inicio</Text>
+          <Icon style={[styles.icon, { color: '#4bc386' }]} name="home" size={24} />
+          <Text style={[styles.footerItem, { color: '#46c386' }]}>Inicio</Text>
         </View>
-        <View style={styles.footerItem}>
-          <MaterialIcons style={styles.icon} name="explore" size={26} />
-          <Text style={styles.footerText}>Explorar</Text>
-        </View>
-        <View style={styles.footerItem}>
-          <Icon style={styles.icon} name="message1" size={26} />
-          <Text style={styles.footerText}>Messagem</Text>
-        </View>
-        <View style={styles.footerItem}>
-          <FontAwesome5 style={styles.icon} name="user" size={26} />
-          <Text style={styles.footerText}>Conta</Text>
-        </View>
+        <FooterItem iconName="explore" iconType="MaterialIcons" text="Explorar" />
+        <FooterItem iconName="message1" iconType="AntDesign" text="Mensagem" />
+        <FooterItem iconName="user" iconType="FontAwesome5" text="Conta" />
       </View>
     </View>
   );
 };
-
 export default CloneAvg;
 
 const styles = StyleSheet.create({
@@ -137,7 +127,7 @@ const styles = StyleSheet.create({
   },
   boxText: {
     color: "#fcfffd",
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
   },
@@ -156,13 +146,10 @@ const styles = StyleSheet.create({
   },
   footerItem: {
     alignItems: "center",
-  },
+    fontSize: 11,
+},
     icon: {
     color: "#fcffff",
   },
-  footerText: {
-    color: "#a1a3a3",
-    fontSize: 11,
-    marginTop: 5,
-  },
+
 });
